@@ -1,0 +1,187 @@
+:root {
+    /* Aufruf von Custom Properties über die Funktion var()*/
+  --basic-font-size: 16px;
+
+  /* Mit der max-width werden zu lange Zeilen vermieden.
+    In einer Desktop Auflösung lassen sich lange Zeilen sehr schwierig lesen.*/
+  --max-text-length: 60ch;
+
+  font-family: monospace;
+  line-height: 1.3;
+
+  /* Grundgröße, von der sich alle rem Größen ableiten. */
+  font-size: var(--basic-font-size);
+
+  /*Aufruf über var()*/
+  --text-color: #e9c46a;
+  --accent-color: #ed4832;
+  --backgr-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--backgr-color);
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container-allign {
+    background-color: var(--accent-color);
+
+    display: flex;
+    /* flex-direction: column;
+    align-items: center; */
+}
+
+.logo-wrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+.logo-wrapper, .logo-wrapper > img {
+    margin: 0.5em;
+}
+
+h1 {
+    margin: 0%;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Design search-bar*/
+.search-wrap {
+    background-color: var(--backgr-color);
+    border-radius: 0.5rem;
+    display: flex;
+}
+
+.search-wrap > img {
+    padding: 0.5rem;
+}
+.search-wrap > img:active {
+    transform: scale(0.8);
+    transition: transform 0.1s;
+}
+
+.search-wrap input {
+    flex-grow: 1;
+}
+
+input {
+    border: 0;
+}
+/* delete the blue border, when click on input tag */
+input:focus {
+    outline: none;
+}
+
+.list-wrapper {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); */
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    gap: 1rem;
+
+    margin: 1rem;
+}
+
+/* design pokemon list */
+.list-item {
+    width: 12rem;
+    height: 13.5rem;
+    background-color: #ffffff;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.list-item:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    transition: transform 0.3s;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.5rem 0.5rem 0rem 0rem #505050;
+    
+}
+
+.number-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.name-wrap > p::first-letter {
+    /* first letter */
+    text-transform: uppercase;
+}
+
+.name-wrap {
+    display: flex;
+    justify-content: center;
+
+    background-color: #dcdbd9;
+}
+
+.img-wrap {
+    display: flex;      
+    justify-content: center;
+
+    margin-top: 1rem;
+    /* margin-bottom: 1rem; */
+}
+
+.number-wrap{
+    /* border: 0.25rem solid black; */
+    margin-left: 1rem;
+}
+
+.caption-fonts {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border: 2px solid #000000;
+    border-radius: 0.25rem 0rem 0rem 0rem;
+    background-color: #ffd889;
+
+}
+
+@media (max-width: 52em) {
+    .list-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-item {
+        margin-bottom: 2rem;
+    }
+
+    .header-container-allign {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
