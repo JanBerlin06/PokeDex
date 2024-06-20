@@ -40,9 +40,20 @@ header{
     background-color: var(--accent-color);
 
     display: flex;
-    /* flex-direction: column;
-    align-items: center; */
+    /* justify-content: space-between; */
+    align-items: center;
 }
+
+/* .logo-wrapper, .search-wrapper {
+    flex: 1;
+} */
+
+.search-wrap, .sort-wrapper {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 
 .logo-wrapper {
     display: flex;
@@ -180,6 +191,7 @@ input:focus {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
     }
 }
 
